@@ -1,0 +1,71 @@
+### Obtener todos los productos
+GET http://localhost:3000/api/productos
+Content-Type: application/json
+
+###
+
+### Obtener un producto por código
+GET http://localhost:3000/api/productos/6512
+Content-Type: application/json
+
+###
+
+### Crear un nuevo producto
+POST http://localhost:3000/api/productos
+Content-Type: application/json
+
+{
+  "codigo": "99999",
+  "nombre": "Silla gamer negra",
+  "precio": 45000,
+  "categoria": ["oficina", "ergonómico"]
+}
+
+### Modificar un producto existente
+PUT http://localhost:3000/api/productos/99999
+Content-Type: application/json
+
+{
+  "nombre": "Silla gamer negra edición limitada",
+  "precio": 50000,
+  "categoria": ["oficina", "gamer"]
+}
+
+###
+
+### Eliminar un producto
+DELETE http://localhost:3000/api/productos/99999
+Content-Type: application/json
+
+### Buscar productos por nombre
+GET http://localhost:3000/api/productos/buscar?q=madera
+Accept: application/json
+
+
+### Buscar productos por categoría
+GET http://localhost:3000/api/productos/categoria/oficina
+Content-Type: application/json
+
+### Buscar productos por rango de precio
+GET http://localhost:3000/api/productos/precio/100-50000
+Content-Type: application/json
+
+### Crear múltiples productos (masivo)
+POST http://localhost:3000/api/productos/masivo
+Content-Type: application/json
+
+[
+  {
+    "codigo": "7001",
+    "nombre": "Mesa Ratona Minimalista",
+    "precio": 159.99,
+    "categoria": ["Sala de estar", "Muebles"]
+  },
+  {
+    "codigo": "7002",
+    "nombre": "Estantería Moderna",
+    "precio": 229.99,
+    "categoria": ["Oficina", "Muebles"]
+  }
+]
+
